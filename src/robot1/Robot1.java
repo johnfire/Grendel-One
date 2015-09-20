@@ -12,6 +12,8 @@ package robot1;
 
         
 import java.util.Timer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
  
 
 
@@ -29,6 +31,11 @@ public class Robot1 {
        Speech mySpeech = new Speech();
        
        mysenses.main(args);
+        try {
+            Movement.testpi();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Robot1.class.getName()).log(Level.INFO, null, ex);
+        }
        
     }
     
