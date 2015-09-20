@@ -7,7 +7,7 @@ package robot1;
 
 /**
  *
- * @author christopher-rehm
+ * @author robert mcmurray
  */
 public class CameraTest {
     // Define the number of photos to take.

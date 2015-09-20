@@ -29,8 +29,12 @@ public class Robot1 {
        senses mysenses = new senses();
        Movement myMovements = new Movement();
        Speech mySpeech = new Speech();
+       CameraTest myeye = new CameraTest();
+       
        
        mysenses.main(args);
+       CameraTest.main(args);
+       
         try {
             myMovements.testpi();
         } catch (InterruptedException ex) {
