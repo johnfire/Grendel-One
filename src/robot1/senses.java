@@ -16,15 +16,15 @@ import java.util.TimerTask;
 
 public class senses extends TimerTask{
     
-    int z = 0;
+    int counter1 = 0;
     int counter2 =0;
     
     @Override  
     public void run() {  
         // The logic of task/job that is going to be executed.
         // Here we are going to print the following string value  
-        System.out.format("in senses This is being printed every 3/4 sec. %d%n ", z);  
-        z = z + 1;
+        System.out.format("in senses This is being printed every 3/4 sec. %d%n ", counter1);  
+        counter1 = counter1 + 1;
         for(int i=1; i<1000000; i++){
               counter2++;
         }
