@@ -10,5 +10,26 @@ package robot1.senses;
  * @author christopher-rehm
  */
 public class internetSense {
+ 
+/**
+ * 
+ * @param subject 
+ */
+    public void findInfo(String subject ){
+        
+    }
+    
+    
+    
+    private void sendMessage (){
+        
+    }
+    
+    
+    
+    
+    private void getMesage(){
+        
+    }
     
 }

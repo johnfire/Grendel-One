@@ -16,6 +16,7 @@ public class Hearing extends TimerTask {
     
     int counter = 0;
     int counter2 = 0;
+    robot1.analysis.analyse myHearing = new robot1.analysis.analyse();
     
     @Override  
     public void run() {  
@@ -27,5 +28,22 @@ public class Hearing extends TimerTask {
         for(int i=1; i<1000000; i++){
               counter2++;
         }
-    }    
+    } 
+    
+/**
+ * 
+ */
+    public void listen() {
+        boolean newSound = false;
+        String theSound  = "";
+        
+         
+        if(newSound == true){
+            
+        }
+        
+    }
+    
+    
+    
 }

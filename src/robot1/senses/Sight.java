@@ -31,6 +31,12 @@ public class Sight extends TimerTask {
         
     }   
     
+/**
+ * 
+ * @param numberOfImages
+ * @param delayInterval 
+ */   
+    
     public void takePics(long numberOfImages, int delayInterval) {
         
        
@@ -51,5 +57,13 @@ public class Sight extends TimerTask {
             // Exit the application with the exception's hash code.
             System.exit(e.hashCode());
         }     
-    }            
+    }  
+
+/**
+ * 
+ */
+    
+    public void stopPics(){
+        
+    }
 }

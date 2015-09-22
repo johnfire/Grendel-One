@@ -14,24 +14,21 @@ public class servoController {
     int position = 90;
     static int range = 180;
     
-    
-    
-    
+/**
+ * sets the left right up down status of a servo object
+ * @param side 
+ */   
     public static void setPlusMinus(Boolean side ){
         
         
     }
+   
+/**
+ * moves the servo by amount  
+ */
     
-    public static void moveIt(){
+    public static void moveIt(int amount){
+      
         
     }
-    
-    public static void moveMinus(){
-    
-    } 
-    
-    public static void movePlus(){
-        
-    }
-    
 }

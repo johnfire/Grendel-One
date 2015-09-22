@@ -11,28 +11,61 @@ package robot1.movement;
  */
 public class movmentRoutines {
     
+   int  maxIDNUMBER =0;
+   
+   
     
-    public static void getRoutine(){
+/**
+ * 
+ * @param idNumber 
+ */ 
+    
+    public static void getRoutine(int idNumber){
         
     }
     
-    public static void putRoutine(){
+/**
+ * places routine back in memory bank
+ * @param idNumber 
+ */ 
+    
+    public static void putRoutine(int idNumber){
         
     }
-    
-    public static void runRoutine(){
+
+/**
+ * runs a given routine by id number
+ *
+ * @param idNumber
+ * @param speed 
+ */
+    public static void runRoutine(int idNumber, int speed){
         
     }
-    
-    public static void recordRoutine (){
+
+/**
+ * records a movement routine, gives it a name.
+ * @param name 
+ */
+    public static void recordRoutine (String name){
         
     }
+   
+/**
+ * modifys a given routine 
+ * @param idNumber 
+ */
     
-    public static void modifyRoutine(){
+    public static void modifyRoutine(int idNumber){
         
     }
  
-    public static void eraseRoutine(){
+/**
+ * erases a routine
+ * @param idNumber 
+ */
+    
+    public static void eraseRoutine(int idNumber){
         
     }
     

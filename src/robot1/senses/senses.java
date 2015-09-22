@@ -19,7 +19,7 @@ public class senses extends TimerTask{
     int counter1 = 0;
     int counter2 = 0;
     
-    boolean sightOn = False;
+    boolean sightOn = false;
     boolean hearingOn = false;
     boolean internetOn = false;
     
@@ -33,32 +33,94 @@ public class senses extends TimerTask{
               counter2++;
         }
     }  
+/**
+ *the next method runs the sight object and causes it to make pictures, 
+ * do basic analysis and return results for further processing.
+ */
+
     public static void runSight(){
         
        
     }  
+ 
+/**
+ * 
+ */    
+       
+    public static void stopSight(){
+        
+    }
     
+/**
+ *the next method runs the hearing object and causes it to make pictures, 
+ * do basic analysis and return results for further processing.
+ * 
+ */
+
     public static void runHearing(){
         
        
     } 
+    
+/**
+ * 
+ */    
+       
+    public static void stopHearing(){
+        
+    }
+    
+/**
+ *does the same for the internet connection.
+ * 
+ */
     
     public static void runInternet(){
         
        
     } 
     
-    public static void main(String[] args) { 
+/**
+ * 
+ */    
+       
+    public static void stopInternet(){
+        
+        
     }
     
+/**
+ *simply our main function. does nothing at this time. 22-9-2015
+ * 
+ */   
+    
+    public static void main(String[] args) { 
+        
+    }
+    
+/**
+ *
+ * send a notice to brain that we have new info
+ */    
     
     public static void sendBrainMessage(){
         
     }
     
+/**
+ *
+ * get notice from brain and follow instruxtions
+ */    
+    
     public static void recieveBrainMessage(){
         
     }
+    
+/**
+ *test routine. simply prints stuff out from the various routines. 
+ * 
+ */   
+    
     public static void test (){
         
         // Create an instance of our task/job for execution  
@@ -80,10 +142,8 @@ public class senses extends TimerTask{
         // Second parameter: 0 - means that the task is   
         // executed in 0 millisecond after the program runs.  
         // Third parameter: 1000 - means that the task is   
-        // repeated every 1000 milliseconds  
-          
-    }  
-      
+        // repeated every 1000 milliseconds         
+    }       
 }  
    
   
