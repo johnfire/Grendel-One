@@ -10,16 +10,18 @@ package robot1.analysis;
  * @author christopher-rehm
  */
 public class analyseMaster implements Runnable  {
-    array of int myprocesses = 0;
+    int[] myprocesses = new int[1000];
     
     @Override
     public void run(){
         while(true){
             
-      
-        }
-        
+        }   
     } 
+    
+/**
+ * 
+ */
     
     public void addJob(){
         

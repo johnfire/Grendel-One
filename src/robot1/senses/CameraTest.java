@@ -29,7 +29,7 @@ public class CameraTest {
       for (long i = 0; i < _numberOfImages; ++i)
       {
         // Capture the image.
-        camera.TakePicture("image" + i + ".jpg",800,600);
+        camera.TakePicture(System.currentTimeMillis() + ".jpg",800,600);
         // Pause after each photo.
         Thread.sleep(_delayInterval);
       }

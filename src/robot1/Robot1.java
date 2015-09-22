@@ -10,7 +10,6 @@ package robot1;
  * @author christopher-rehm
  */
         
-//import java.util.Timer;
 import robot1.senses.CameraTest;
 import robot1.movement.Movement;
 import robot1.senses.senses;
@@ -25,6 +24,7 @@ public class Robot1 {
     private  static boolean talktalk    = false;
     private  static boolean saveit      = false;
     private  static boolean action      = false;
+    private  static long thetime;
 
     /**
      * @param args the command line arguments
@@ -51,52 +51,127 @@ public class Robot1 {
        
        while(true){
            
-           //use sight
-           //use hearing
-           //on interrupt do something
+            //use sight
+            //use hearing
+            //on interrupt do something
            
-           if (newSight == true){
+            if (newSight == true){
                 
-                // on analysis do something             
-               newSight = false; 
-           }
+                // on analysis do something      
+               
+                newSight = false; 
+            }
            
-           if (newHear  == true){
+            if (newHear  == true){
                 
-                // on analysis do something             
-              newHear = false;  
-           }
+               // on analysis do something             
+               newHear = false;  
+            }
            
-           if (newInternet == true){
+            if (newInternet == true){
                 
-                // on analysis do something             
-              newInternet = false; 
-           }
+               // on analysis do something             
+               newInternet = false; 
+            }
            
-           if (newAnalysis ==true){
+            if (newAnalysis ==true){
                newAnalysis = false;
                String saythis  = "";
                
                
-               if(talktalk == true){
+                if(talktalk == true){
                    talktalk = false;
                    mySpeech.saySentence(saythis);
                    
-               }
+                }
                
-               if(saveit == true ){
+                if(saveit == true ){
                    saveit = false;
                    memory newMemory = new memory();
                    newMemory.setIDNumber(0);
                    
-               }
-               if(action == true){
+                }
+                if(action == true){
                    
                   action = false; 
-               }    
-           }         
-        } 
-       //mysenses.main(args);
-       //myMovements.testpi();  
-    }  
+                    
+                }         
+            } 
+            //mysenses.main(args);
+            //myMovements.testpi();  
+        }  
+    }
+    
+    public static void setnewSight(){
+        newSight = true;
+        //long thetime;
+        Robot1.thetime = System.currentTimeMillis();
+            
+    }
+    
+    public static void setnewHear(){
+        newHear =true;
+        
+    }
+    
+    public static void setnewInternet(){
+        newInternet = true;
+        
+    }
+    
+    public static void setnewAnalysis(){
+        newAnalysis = true;
+        
+    }
+    
+    public static void settalktalk(){
+        talktalk = true;
+        
+    }
+    
+    public static void setSaveIt(){
+        saveit = true;
+        
+    }
+    
+    public static void setaction(){
+        action = true;
+        
+    }
+    
+    public static void clearnewSight(){
+        newSight = false;
+        
+    }
+    
+    public static void clearnewHear(){
+        newHear =false;
+        
+    }
+    
+    public static void clearnewInternet(){
+        newInternet = false;
+        
+    }
+    
+    public static void clearnewAnalysis(){
+        newAnalysis = false;
+        
+    }
+    
+    public static void cleartalktalk(){
+        talktalk = false;
+        
+    }
+    
+    public static void clearSaveIt(){
+        saveit = false;
+        
+    }
+    
+    public static void clearaction(){
+        action = false;
+        
+    }
+    
 }

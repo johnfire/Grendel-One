@@ -22,9 +22,14 @@ import java.util.logging.Logger;
  *
  * @author christopher-rehm
  */
+//private static int servos = 2;
+
+
 
 public class Movement implements Runnable {
-    static int servos = 2;
+    int servos = 2;
+    servoController[] servo = new servoController[servos];
+    
    
 /**
  * 
@@ -34,6 +39,14 @@ public class Movement implements Runnable {
         
     }
     
+    public void setupServos(){
+        for (int i = 0; i < servos; i++){
+             servo[i] = new servoController();   
+             servo[i].setidNumber(i);
+        }   
+    }
+    
+    
     public static void executeRoutine (int idNumber){
         
     }
@@ -42,7 +55,9 @@ public class Movement implements Runnable {
  * 
  */
     
-    public static void moveNeck(int amount){
+    public void moveNeck(int amount){
+        
+        servo[1].moveIt(amount);
         
     }
     
@@ -50,7 +65,9 @@ public class Movement implements Runnable {
  * 
  * @param amount 
  */
-    public static void moveEyes(int amount){
+    public void moveEyes(int amount){
+        
+     servo[0].moveIt(amount);
         
     }
  
@@ -69,8 +86,7 @@ public class Movement implements Runnable {
  * moves the body somehwere based on diection and speed and distance
  */
     public static void moveWheels(boolean direction, int speed, int distance) {
-        
-        
+            
     }
 
 /**
@@ -127,11 +143,7 @@ public class Movement implements Runnable {
         }
         // stop all GPIO activity/threads by shutting down the GPIO controller
         // (this method will forcefully shutdown all GPIO monitoring threads and scheduled tasks)
-        // gpio.shutdown();
-            
-    }
-    
-    
-     
+        // gpio.shutdown();        
+    }     
 }
      

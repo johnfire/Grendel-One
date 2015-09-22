@@ -20,6 +20,10 @@ public class Speech implements Runnable{
  
     
     public void saySentence(String theSentence){
-            
+        
+        //send sentence out via audio channel
+        //write code for this.
+        
+        robot1.Robot1.cleartalktalk();        
     }   
 }

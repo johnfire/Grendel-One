@@ -10,12 +10,18 @@ package robot1.analysis;
  * @author christopher-rehm
  */
 public class analyse {
-    
-    public void findMovement (){
+ 
+/**
+ * 
+ */
+    public void findMovement(){
         
     }
     
-    public void findsound (){
+/**
+ * 
+ */
+    public void findsound(){
         
     }
     

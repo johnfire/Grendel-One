@@ -10,6 +10,8 @@ package robot1.senses;
  * @author christopher-rehm
  */
 public class internetSense {
+    int timeRecieved;
+    
  
 /**
  * 
@@ -17,11 +19,14 @@ public class internetSense {
  */
     public void findInfo(String subject ){
         
+        
     }
     
     
     
+    
     private void sendMessage (){
+        
         
     }
     
