@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package robot1;
+package robot1.senses;
 
 /**
  *
@@ -17,7 +17,11 @@ import java.util.TimerTask;
 public class senses extends TimerTask{
     
     int counter1 = 0;
-    int counter2 =0;
+    int counter2 = 0;
+    
+    boolean sightOn = False;
+    boolean hearingOn = false;
+    boolean internetOn = false;
     
     @Override  
     public void run() {  
@@ -29,8 +33,34 @@ public class senses extends TimerTask{
               counter2++;
         }
     }  
-          
-    public static void main(String[] args) {  
+    public static void runSight(){
+        
+       
+    }  
+    
+    public static void runHearing(){
+        
+       
+    } 
+    
+    public static void runInternet(){
+        
+       
+    } 
+    
+    public static void main(String[] args) { 
+    }
+    
+    
+    public static void sendBrainMessage(){
+        
+    }
+    
+    public static void recieveBrainMessage(){
+        
+    }
+    public static void test (){
+        
         // Create an instance of our task/job for execution  
         senses taskSenses = new senses();
         Sight taskSight = new Sight();
