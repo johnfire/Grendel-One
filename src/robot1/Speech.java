@@ -9,6 +9,17 @@ package robot1;
  *
  * @author christopher-rehm
  */
-public class Speech {
+public class Speech implements Runnable{
     
+    String aVocal = "";
+    
+    @Override
+    public void run(){
+        
+    }
+ 
+    
+    public void saySentence(String theSentence){
+            
+    }   
 }

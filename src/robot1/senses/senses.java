@@ -14,7 +14,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class senses extends TimerTask{
+public class senses extends TimerTask implements Runnable {
     
     int counter1 = 0;
     int counter2 = 0;

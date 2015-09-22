@@ -9,6 +9,11 @@ package robot1.analysis;
  *
  * @author christopher-rehm
  */
-public class AnalysisMethod {
+public class AnalysisMethod implements Runnable{
+    
+    @Override
+    public void run(){
+        
+    }
     
 }

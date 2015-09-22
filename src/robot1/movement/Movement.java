@@ -18,13 +18,21 @@ import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author christopher-rehm
+ */
 
-public class Movement {
+public class Movement implements Runnable {
     static int servos = 2;
    
 /**
  * 
  */
+    @Override
+    public void run(){
+        
+    }
     
     public static void executeRoutine (int idNumber){
         

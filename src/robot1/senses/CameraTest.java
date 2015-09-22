@@ -17,7 +17,9 @@ public class CameraTest {
   // Define the interval between photos.
   private static final int _delayInterval = 5000;
 
-  public static void main(String[] args)
+  public static void main(String[] args){
+          }
+  public static void takePic (){
   {
     try
     {
