@@ -13,19 +13,20 @@ package robot1;
 
 public class memory {
     
-   private static String name = "";
-   private static long idNumber = 0;
+   private String name = "";
+   private long idNumber = 0;
    private int memValue = 0;
-   private static long time = 0;
+   private long time = 0;
    
    
   
    public void settime(){
        time =  System.currentTimeMillis();
    }
-   public void recordMemory(){
+   
+   public boolean recordMemory(){
        //record something as a specific memory
-       
+       return true;
    }
    
    public void showMemory(){
@@ -55,6 +56,10 @@ public class memory {
    
    public void lowerValue (){
        memValue--;
+   }
+   
+   public void  saveMemory (){
+       
    }
   
 }

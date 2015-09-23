@@ -20,9 +20,9 @@ import java.util.logging.Logger;
 
 
 public class servoController {
-    static int idNumber = 0;
-    int position = 90;
-    static int range = 180;
+    private int idNumber = 0;
+    private int position = 90;
+    private int range = 180;
     
     
     public void setidNumber(int id){
@@ -42,12 +42,11 @@ public class servoController {
  */
     
     public void moveIt(int amount){
-      robot1.memory newmemory =new robot1.memory();
+      robot1.memory newmemory = new robot1.memory();
       newmemory.settime();
-      newmemory.setIDNumber(System.currentTimeMillis())
+      newmemory.setIDNumber(System.currentTimeMillis());
               
                //pi4j code operates servo
-;
-        
+      newmemory.saveMemory();
     }
 }

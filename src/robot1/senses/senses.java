@@ -16,12 +16,12 @@ import java.util.TimerTask;
 
 public class senses extends TimerTask implements Runnable {
     
-    int counter1 = 0;
-    int counter2 = 0;
+    private int counter1 = 0;
+    private int counter2 = 0;
     
-    boolean sightOn = false;
-    boolean hearingOn = false;
-    boolean internetOn = false;
+    private boolean sightOn = false;
+    private boolean hearingOn = false;
+    private boolean internetOn = false;
     
     @Override  
     public void run() {  
@@ -38,7 +38,7 @@ public class senses extends TimerTask implements Runnable {
  * do basic analysis and return results for further processing.
  */
 
-    public static void runSight(){
+    public void runSight(){
         
        
     }  
@@ -47,7 +47,7 @@ public class senses extends TimerTask implements Runnable {
  * 
  */    
        
-    public static void stopSight(){
+    public void stopSight(){
         
     }
     
@@ -57,7 +57,7 @@ public class senses extends TimerTask implements Runnable {
  * 
  */
 
-    public static void runHearing(){
+    public void runHearing(){
         
        
     } 
@@ -66,7 +66,7 @@ public class senses extends TimerTask implements Runnable {
  * 
  */    
        
-    public static void stopHearing(){
+    public void stopHearing(){
         
     }
     
@@ -75,7 +75,7 @@ public class senses extends TimerTask implements Runnable {
  * 
  */
     
-    public static void runInternet(){
+    public void runInternet(){
         
        
     } 
@@ -84,7 +84,7 @@ public class senses extends TimerTask implements Runnable {
  * 
  */    
        
-    public static void stopInternet(){
+    public void stopInternet(){
         
         
     }
@@ -103,7 +103,7 @@ public class senses extends TimerTask implements Runnable {
  * send a notice to brain that we have new info
  */    
     
-    public static void sendBrainMessage(){
+    public void sendBrainMessage(){
         
     }
     
@@ -112,7 +112,7 @@ public class senses extends TimerTask implements Runnable {
  * get notice from brain and follow instruxtions
  */    
     
-    public static void recieveBrainMessage(){
+    public void recieveBrainMessage(){
         
     }
     
@@ -121,7 +121,7 @@ public class senses extends TimerTask implements Runnable {
  * 
  */   
     
-    public static void test (){
+    public void test (){
         
         // Create an instance of our task/job for execution  
         senses taskSenses = new senses();

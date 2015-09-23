@@ -11,7 +11,7 @@ package robot1.movement;
  */
 public class movmentRoutines {
     
-   int  maxIDNUMBER =0;
+   private int  maxIDNUMBER =0;
    
    
     
@@ -20,7 +20,7 @@ public class movmentRoutines {
  * @param idNumber 
  */ 
     
-    public static void getRoutine(int idNumber){
+    public void getRoutine(int idNumber){
         
     }
     
@@ -29,7 +29,7 @@ public class movmentRoutines {
  * @param idNumber 
  */ 
     
-    public static void putRoutine(int idNumber){
+    public void putRoutine(int idNumber){
         
     }
 
@@ -39,7 +39,7 @@ public class movmentRoutines {
  * @param idNumber
  * @param speed 
  */
-    public static void runRoutine(int idNumber, int speed){
+    public void runRoutine(int idNumber, int speed){
         
     }
 
@@ -47,7 +47,7 @@ public class movmentRoutines {
  * records a movement routine, gives it a name.
  * @param name 
  */
-    public static void recordRoutine (String name){
+    public void recordRoutine (String name){
         
     }
    
@@ -56,7 +56,7 @@ public class movmentRoutines {
  * @param idNumber 
  */
     
-    public static void modifyRoutine(int idNumber){
+    public void modifyRoutine(int idNumber){
         
     }
  
@@ -65,7 +65,7 @@ public class movmentRoutines {
  * @param idNumber 
  */
     
-    public static void eraseRoutine(int idNumber){
+    public void eraseRoutine(int idNumber){
         
     }
     

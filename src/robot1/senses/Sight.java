@@ -14,10 +14,10 @@ import java.util.TimerTask;
 
 public class Sight extends TimerTask {
 
-    int counter = 0;
-    int counter2 = 0;
-    long numberofimages = 0;
-    int picdelay = 0;
+    private int counter = 0;
+    private int counter2 = 0;
+    private long numberofimages = 0;
+    private int picdelay = 0;
 
     @Override
     public void run() {

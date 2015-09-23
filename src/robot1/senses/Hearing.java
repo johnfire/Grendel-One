@@ -14,8 +14,8 @@ import java.util.TimerTask;
 
 public class Hearing extends TimerTask {
     
-    int counter = 0;
-    int counter2 = 0;
+    private int counter = 0;
+    private int counter2 = 0;
     robot1.analysis.analyse myHearing = new robot1.analysis.analyse();
     
     @Override  
@@ -42,8 +42,5 @@ public class Hearing extends TimerTask {
             
         }
         
-    }
-    
-    
-    
+    }  
 }

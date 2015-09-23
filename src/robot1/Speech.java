@@ -24,6 +24,6 @@ public class Speech implements Runnable{
         //send sentence out via audio channel
         //write code for this.
         
-        robot1.Robot1.cleartalktalk();        
+       ;        
     }   
 }

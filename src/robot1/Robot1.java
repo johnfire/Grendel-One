@@ -102,74 +102,74 @@ public class Robot1 {
         }  
     }
     
-    public static void setnewSight(){
+    public void setnewSight(){
         newSight = true;
         //long thetime;
         Robot1.thetime = System.currentTimeMillis();
             
     }
     
-    public static void setnewHear(){
+    public void setnewHear(){
         newHear =true;
         
     }
     
-    public static void setnewInternet(){
+    public void setnewInternet(){
         newInternet = true;
         
     }
     
-    public static void setnewAnalysis(){
+    public void setnewAnalysis(){
         newAnalysis = true;
         
     }
     
-    public static void settalktalk(){
+    public void settalktalk(){
         talktalk = true;
         
     }
     
-    public static void setSaveIt(){
+    public void setSaveIt(){
         saveit = true;
         
     }
     
-    public static void setaction(){
+    public void setaction(){
         action = true;
         
     }
     
-    public static void clearnewSight(){
+    public void clearnewSight(){
         newSight = false;
         
     }
     
-    public static void clearnewHear(){
+    public void clearnewHear(){
         newHear =false;
         
     }
     
-    public static void clearnewInternet(){
+    public void clearnewInternet(){
         newInternet = false;
         
     }
     
-    public static void clearnewAnalysis(){
+    public void clearnewAnalysis(){
         newAnalysis = false;
         
     }
     
-    public static void cleartalktalk(){
+    public void cleartalktalk(){
         talktalk = false;
         
     }
     
-    public static void clearSaveIt(){
+    public void clearSaveIt(){
         saveit = false;
         
     }
     
-    public static void clearaction(){
+    public void clearaction(){
         action = false;
         
     }

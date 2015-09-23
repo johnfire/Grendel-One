@@ -39,15 +39,16 @@ public class Movement implements Runnable {
         
     }
     
-    public void setupServos(){
+    public boolean setupServos(){
         for (int i = 0; i < servos; i++){
              servo[i] = new servoController();   
              servo[i].setidNumber(i);
-        }   
+        }
+        return true;
     }
     
     
-    public static void executeRoutine (int idNumber){
+    public void executeRoutine (int idNumber){
         
     }
     
@@ -78,21 +79,21 @@ public class Movement implements Runnable {
  * @param ZCoord
  * @param handpos 
  */
-    public static void moveArm(int xCoord,int YCoord,int ZCoord, boolean handpos){
+    public void moveArm(int xCoord,int YCoord,int ZCoord, boolean handpos){
         
     }
  
 /**
  * moves the body somehwere based on diection and speed and distance
  */
-    public static void moveWheels(boolean direction, int speed, int distance) {
+    public void moveWheels(boolean direction, int speed, int distance) {
             
     }
 
 /**
  *runs the warning light and test the connection
  */
-    public static void testpi(){
+    public void testpi(){
 
         Timer timer = new Timer();
         //try {
