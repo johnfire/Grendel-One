@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package robot1.senses;
 
 /**
  *
  * @author christopher-rehm
  */
+
 public class internetSense {
     private int timeRecieved;
     
@@ -17,6 +19,7 @@ public class internetSense {
  * 
  * @param subject 
  */
+    
     public void findInfo(String subject ){
         
         

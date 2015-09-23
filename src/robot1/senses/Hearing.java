@@ -37,10 +37,8 @@ public class Hearing extends TimerTask {
         boolean newSound = false;
         String theSound  = "";
         
-         
         if(newSound == true){
             
-        }
-        
+        }        
     }  
 }

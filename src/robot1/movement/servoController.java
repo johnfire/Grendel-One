@@ -42,7 +42,7 @@ public class servoController {
  */
     
     public void moveIt(int amount){
-      robot1.memory newmemory = new robot1.memory();
+      robot1.Memory newmemory = new robot1.Memory();
       newmemory.settime();
       newmemory.setIDNumber(System.currentTimeMillis());
               

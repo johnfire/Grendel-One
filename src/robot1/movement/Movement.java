@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package robot1.movement;
 
 /**
  *
  * @author christopher-rehm
  */
+
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
@@ -24,9 +26,8 @@ import java.util.logging.Logger;
  */
 //private static int servos = 2;
 
-
-
 public class Movement implements Runnable {
+    
     int servos = 2;
     servoController[] servo = new servoController[servos];
     
@@ -34,6 +35,7 @@ public class Movement implements Runnable {
 /**
  * 
  */
+    
     @Override
     public void run(){
         
@@ -66,6 +68,7 @@ public class Movement implements Runnable {
  * 
  * @param amount 
  */
+    
     public void moveEyes(int amount){
         
      servo[0].moveIt(amount);

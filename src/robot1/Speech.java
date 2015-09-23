@@ -9,6 +9,7 @@ package robot1;
  *
  * @author christopher-rehm
  */
+
 public class Speech implements Runnable{
     
     String aVocal = "";
@@ -19,11 +20,15 @@ public class Speech implements Runnable{
     }
  
     
-    public void saySentence(String theSentence){
+    /**
+     * this method takes the phrase or sentence and uses the hardware to say the phrase.
+     * @param theSentence 
+     */
+    
+    public synchronized void saySentence(String theSentence){
         
         //send sentence out via audio channel
         //write code for this.
-        
-       ;        
+                
     }   
 }

@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package robot1.senses;
 
 /**
@@ -10,6 +11,7 @@ package robot1.senses;
  *
  * @author christopher-rehm
  */
+
 import java.util.TimerTask;
 
 public class Sight extends TimerTask {
@@ -32,6 +34,7 @@ public class Sight extends TimerTask {
      * @param numberOfImages
      * @param delayInterval
      */
+    
     public void takePics(long numberOfImages, int delayInterval) {
         numberofimages = numberOfImages;
         picdelay = delayInterval;
@@ -58,6 +61,7 @@ public class Sight extends TimerTask {
     /**
      *
      */
+    
     public void changenumofpics(long x) {
         numberofimages = x;
     }

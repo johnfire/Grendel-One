@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package robot1;
 
 /**
@@ -27,80 +28,91 @@ public class Robot1 {
     private  static long thetime;
 
     /**
+     * this is the main method of Robot1, that basically puts the whole
+     * operation into operation. 
      * @param args the command line arguments
      */
     
     public static void main(String[] args) {
-       // TODO code application logic here    
-       
-       senses mysenses      = new senses();
-       Movement myMovements = new Movement();
-       robot1.analysis.analyseMaster myMasterAnalyser = new robot1.analysis.analyseMaster();
-       Speech mySpeech      = new Speech();
-       CameraTest myeye     = new CameraTest();
-       
-       Thread T1 = new Thread (mysenses);
-       Thread T2 = new Thread (myMovements);
-       Thread T3 = new Thread (myMasterAnalyser);
-       Thread T4 = new Thread (mySpeech);
-       
-       T1.start();
-       T2.start();
-       T3.start();
-       T4.start();
-       
-       while(true){
-           
-            //use sight
-            //use hearing
-            //on interrupt do something
-           
-            if (newSight == true){
-                
-                // on analysis do something      
-               
-                newSight = false; 
-            }
-           
-            if (newHear  == true){
-                
-               // on analysis do something             
-               newHear = false;  
-            }
-           
-            if (newInternet == true){
-                
-               // on analysis do something             
-               newInternet = false; 
-            }
-           
-            if (newAnalysis ==true){
-               newAnalysis = false;
-               String saythis  = "";
-               
-               
-                if(talktalk == true){
-                   talktalk = false;
-                   mySpeech.saySentence(saythis);
-                   
+        // TODO code application logic here    
+        try {
+            senses mysenses      = new senses();
+            Movement myMovements = new Movement();
+            robot1.analysis.analyseMaster myMasterAnalyser = new robot1.analysis.analyseMaster();
+            Speech mySpeech      = new Speech();
+            CameraTest myeye     = new CameraTest();
+
+            Thread T1 = new Thread (mysenses);
+            Thread T2 = new Thread (myMovements);
+            Thread T3 = new Thread (myMasterAnalyser);
+            Thread T4 = new Thread (mySpeech);
+
+            T1.start();
+            T2.start();
+            T3.start();
+            T4.start();
+
+            while(true){
+
+                //use sight
+                //use hearing
+                //on interrupt do something
+
+                if (newSight == true){
+
+                    // on analysis do something      
+
+                    newSight = false; 
                 }
-               
-                if(saveit == true ){
-                   saveit = false;
-                   memory newMemory = new memory();
-                   newMemory.setIDNumber(0);
-                   
+
+                if (newHear  == true){
+
+                   // on analysis do something             
+                   newHear = false;  
                 }
-                if(action == true){
-                   
-                  action = false; 
+
+                if (newInternet == true){
+
+                   // on analysis do something             
+                   newInternet = false; 
+                }
+
+                if (newAnalysis ==true){
+                   newAnalysis = false;
+                   String saythis  = "";
+
+
+                    if(talktalk == true){
+                       talktalk = false;
+                       mySpeech.saySentence(saythis);
+
+                    }
+
+                    if(saveit == true ){
+                       saveit = false;
+                       Memory newMemory = new Memory();
+                       newMemory.setIDNumber(0);
+
+                    }
                     
-                }         
-            } 
+                    if(action == true){
+
+                      action = false; 
+
+                    }         
+                } 
+            }
             //mysenses.main(args);
             //myMovements.testpi();  
-        }  
-    }
+        } catch (Exception e) {
+            // Handle error
+            System.out.println( "Exception of some kind: " + e );
+            // dump information about exactly where the exception occurred
+            e.printStackTrace( System.err );   
+            //shut down robot
+        }
+    } 
+    
     
     public void setnewSight(){
         newSight = true;

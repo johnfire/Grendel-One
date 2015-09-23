@@ -11,12 +11,12 @@ package robot1;
  * @author christopher-rehm
  */
 
-public class memory {
+public class Memory {
     
-   private String name = "";
+   private String name   = "";
    private long idNumber = 0;
-   private int memValue = 0;
-   private long time = 0;
+   private int memValue  = 0;
+   private long time     = 0;
    
    
   

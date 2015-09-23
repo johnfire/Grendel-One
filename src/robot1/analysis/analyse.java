@@ -9,11 +9,13 @@ package robot1.analysis;
  *
  * @author christopher-rehm
  */
+
 public class analyse {
  
 /**
  * 
  */
+    
     public void findMovement(){
         
     }
@@ -21,6 +23,7 @@ public class analyse {
 /**
  * 
  */
+    
     public void findsound(){
         
     }

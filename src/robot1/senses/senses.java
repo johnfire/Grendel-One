@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package robot1.senses;
 
 /**
@@ -33,12 +34,13 @@ public class senses extends TimerTask implements Runnable {
               counter2++;
         }
     }  
+    
 /**
  *the next method runs the sight object and causes it to make pictures, 
  * do basic analysis and return results for further processing.
  */
 
-    public void runSight(){
+    public synchronized void runSight(){
         
        
     }  
@@ -57,7 +59,7 @@ public class senses extends TimerTask implements Runnable {
  * 
  */
 
-    public void runHearing(){
+    public synchronized void runHearing(){
         
        
     } 
@@ -75,7 +77,7 @@ public class senses extends TimerTask implements Runnable {
  * 
  */
     
-    public void runInternet(){
+    public synchronized void runInternet(){
         
        
     } 
@@ -112,7 +114,7 @@ public class senses extends TimerTask implements Runnable {
  * get notice from brain and follow instruxtions
  */    
     
-    public void recieveBrainMessage(){
+    public synchronized  void recieveBrainMessage(){
         
     }
     
