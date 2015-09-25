@@ -18,14 +18,14 @@ import robot1.sensesstuff.senses;
 //import java.util.logging.Logger;
 
 public class Robot1 {
-    private  static boolean newSight    = false;
-    private  static boolean newHear     = false;
-    private  static boolean newInternet = false;
-    private  static boolean newAnalysis = false;
-    private  static boolean talktalk    = false;
-    private  static boolean saveit      = false;
-    private  static boolean action      = false;
-    private  static long thetime;
+    private static boolean newSight    = false;
+    private static boolean newHear     = false;
+    private static boolean newInternet = false;
+    private static boolean newAnalysis = false;
+    private static boolean talktalk    = false;
+    private static boolean saveit      = false;
+    private static boolean action      = false;
+    private static long thetime;
 
     /**
      * this is the main method of Robot1, that basically puts the whole
@@ -47,13 +47,15 @@ public class Robot1 {
             Thread T3 = new Thread (myMasterAnalyser);
             Thread T4 = new Thread (mySpeech);
 
+            System.out.println("--> THREAD 0 starting threads 1 to 4 ");
             T1.start();
             T2.start();
             T3.start();
             T4.start();
 
             while(true){
-                
+                System.out.println("!!> Sys Time "+ System.currentTimeMillis());
+                System.out.println("--> THREAD 0 starting do loop of main brain ");
                 mysenses.test();
                 myMovements.testpi();
                 myMasterAnalyser.waitForWork();
@@ -63,52 +65,57 @@ public class Robot1 {
                 //on interrupt do something
 
                 if (newSight == true){
-
+                    System.out.println("--> THREAD 0 got new sight processing");
                     // on analysis do something      
 
                     newSight = false; 
                 }
 
                 if (newHear  == true){
+                    System.out.println("--> THREAD 0 ");
 
-                   // on analysis do something             
-                   newHear = false;  
+                    // on analysis do something             
+                    newHear = false;  
                 }
 
                 if (newInternet == true){
-
-                   // on analysis do something             
-                   newInternet = false; 
+                    System.out.println("--> THREAD 0 ");
+                    // on analysis do something             
+                    newInternet = false; 
                 }
 
                 if (newAnalysis ==true){
-                   newAnalysis = false;
-                   String saythis  = "";
+                    System.out.println("--> THREAD 0 ");
+                    newAnalysis = false;
+                    String saythis  = "";
 
 
                     if(talktalk == true){
-                       talktalk = false;
-                       mySpeech.saySentence(saythis);
+                        System.out.println("--> THREAD 0 ");
+                        talktalk = false;
+                        mySpeech.saySentence(saythis);
 
                     }
 
                     if(saveit == true ){
-                       saveit = false;
-                       Memory newMemory = new Memory();
-                       newMemory.setIDNumber(0);
+                        System.out.println("--> THREAD 0 ");
+                        saveit = false;
+                        Memory newMemory = new Memory();
+                        newMemory.setIDNumber(0);
 
                     }
                     
                     if(action == true){
+                        System.out.println("--> THREAD 0 ");
 
-                      action = false; 
+                        action = false; 
 
                     }         
                 } 
             }  
         } catch (Exception e) {
             // Handle error
-            System.out.println( "Exception of some kind: " + e );
+            System.out.println( "!! THREAD 0!!  !!! Exception of some kind: " + e );
             // dump information about exactly where the exception occurred
             e.printStackTrace( System.err );   
             //shut down robot
@@ -117,6 +124,7 @@ public class Robot1 {
     
     
     public void setnewSight(){
+        System.out.println("--> THREAD 0 ");
         newSight = true;
         //long thetime;
         Robot1.thetime = System.currentTimeMillis();
@@ -124,66 +132,79 @@ public class Robot1 {
     }
     
     public void setnewHear(){
+        System.out.println("--> THREAD 0 ");
         newHear =true;
         
     }
     
     public void setnewInternet(){
+        System.out.println("--> THREAD 0 ");
         newInternet = true;
         
     }
     
     public void setnewAnalysis(){
+        System.out.println("--> THREAD 0 ");
         newAnalysis = true;
         
     }
     
     public void settalktalk(){
+        System.out.println("--> THREAD 0 ");
         talktalk = true;
         
     }
     
     public void setSaveIt(){
+        System.out.println("--> THREAD 0 ");
         saveit = true;
         
     }
     
     public void setaction(){
+        System.out.println("--> THREAD 0 ");
         action = true;
         
     }
     
     public void clearnewSight(){
+        System.out.println("--> THREAD 0 ");
         newSight = false;
         
     }
     
     public void clearnewHear(){
+        System.out.println("--> THREAD 0 ");
         newHear =false;
         
     }
     
     public void clearnewInternet(){
+        System.out.println("--> THREAD 0 ");
         newInternet = false;
         
     }
     
     public void clearnewAnalysis(){
+        System.out.println("--> THREAD 0 ");
         newAnalysis = false;
         
     }
     
     public void cleartalktalk(){
+        System.out.println("--> THREAD 0 ");
         talktalk = false;
         
     }
     
     public void clearSaveIt(){
+        System.out.println("--> THREAD 0 ");
         saveit = false;
         
     }
     
     public void clearaction(){
+        System.out.println("--> THREAD 0 ");
         action = false;
         
     }

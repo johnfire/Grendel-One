@@ -56,6 +56,7 @@ public class Movement implements Runnable {
     }
     
     public boolean setupServos(){
+        System.out.println("--> THREAD 2 I am setting up the servos");
         for (int i = 0; i < servos; i++){
              servo[i] = new servoController();   
              servo[i].setidNumber(i);
@@ -65,6 +66,7 @@ public class Movement implements Runnable {
     
     
     public void executeRoutine (int idNumber){
+        System.out.println("--> THREAD 2 executing a movment routine");
         
     }
     
@@ -73,7 +75,7 @@ public class Movement implements Runnable {
  */
     
     public void moveNeck(int amount){
-        
+        System.out.println("--> THREAD 2 moving the neck");
         servo[1].moveIt(amount);
         
     }
@@ -84,7 +86,7 @@ public class Movement implements Runnable {
  */
     
     public void moveEyes(int amount){
-        
+     System.out.println("--> THREAD 2 moving the eyes");   
      servo[0].moveIt(amount);
         
     }
@@ -97,6 +99,7 @@ public class Movement implements Runnable {
  * @param handpos 
  */
     public void moveArm(int xCoord,int YCoord,int ZCoord, boolean handpos){
+    System.out.println("--> THREAD 2 moving the arm");
         
     }
  
@@ -104,14 +107,10 @@ public class Movement implements Runnable {
  * moves the body somehwere based on diection and speed and distance
  */
     public void moveWheels(boolean direction, int speed, int distance) {
-            
+    System.out.println("--> THREAD 2 moving the wheels");
+    
     }
     
-    public void initialisepi() {
-        
-
-        
-    }
 
 /**
  *runs the warning light and test the connection
@@ -119,7 +118,7 @@ public class Movement implements Runnable {
     
     public void testpi() throws InterruptedException{
        
-        System.out.println("--> THREAD 2 entering loop");
+        System.out.println("--> THREAD 2 entering testpi loop");
         System.out.println("<--Pi4J--> THREAD 2 GPIO Control Example ... started.");
         
         // set shutdown state for this pin

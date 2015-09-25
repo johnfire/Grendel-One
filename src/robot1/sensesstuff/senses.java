@@ -28,7 +28,7 @@ public class senses extends TimerTask implements Runnable {
     public void run() {  
         // The logic of task/job that is going to be executed.
         // Here we are going to print the following string value  
-        System.out.format("--> THREAD 1 in senses This is being printed every 3/4 sec. %d%n ", counter1);  
+        System.out.println("--> THREAD 1 in senses This is being printed every 3/4 sec.  "+ counter1);  
         counter1 = counter1 + 1;
     }  
     
@@ -38,6 +38,7 @@ public class senses extends TimerTask implements Runnable {
  */
 
     public synchronized void runSight(){
+        System.out.println("--> THREAD 1 run sight object and make pictures");
         
        
     }  
@@ -47,6 +48,7 @@ public class senses extends TimerTask implements Runnable {
  */    
        
     public void stopSight(){
+        System.out.println("--> THREAD 1 stop sight object no pictures");
         
     }
     
@@ -57,6 +59,7 @@ public class senses extends TimerTask implements Runnable {
  */
 
     public synchronized void runHearing(){
+        System.out.println("--> THREAD 1  run hearing look for sound events");
         
        
     } 
@@ -66,7 +69,7 @@ public class senses extends TimerTask implements Runnable {
  */    
        
     public void stopHearing(){
-        
+        System.out.println("--> THREAD 1 stop hearing");
     }
     
 /**
@@ -75,7 +78,7 @@ public class senses extends TimerTask implements Runnable {
  */
     
     public synchronized void runInternet(){
-        
+        System.out.println("--> THREAD 1 run internet search ");
        
     } 
     
@@ -84,6 +87,7 @@ public class senses extends TimerTask implements Runnable {
  */    
        
     public void stopInternet(){
+        System.out.println("--> THREAD 1 stop internet search");
         
         
     }
@@ -103,6 +107,7 @@ public class senses extends TimerTask implements Runnable {
  */    
     
     public void sendBrainMessage(){
+        System.out.println("--> THREAD 1 send the brain function a message");
         
     }
     
@@ -112,6 +117,7 @@ public class senses extends TimerTask implements Runnable {
  */    
     
     public synchronized  void recieveBrainMessage(){
+        System.out.println("--> THREAD 1 receive message from main brain");
         
     }
     
@@ -121,6 +127,7 @@ public class senses extends TimerTask implements Runnable {
  */   
     
     public void test (){
+        System.out.println("--> THREAD 1 starting test of senses function");
         
         // Create an instance of our task/job for execution  
         senses taskSenses = new senses();

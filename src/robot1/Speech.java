@@ -19,8 +19,6 @@ public class Speech implements Runnable{
         
     }
  
-    
-    
     /**
      * this method takes the phrase or sentence and uses the hardware to say the phrase.
      * @param theSentence 
@@ -31,7 +29,6 @@ public class Speech implements Runnable{
         System.out.println("--> THREAD 4 speak something");
 
         //send sentence out via audio channel
-        //write code for this.
-                
+        //write code for this.            
     }   
 }

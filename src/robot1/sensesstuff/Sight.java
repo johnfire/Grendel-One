@@ -17,7 +17,6 @@ import java.util.TimerTask;
 public class Sight extends TimerTask {
 
     private int counter = 0;
-    private int counter2 = 0;
     private long numberofimages = 0;
     private int picdelay = 0;
 
@@ -25,7 +24,7 @@ public class Sight extends TimerTask {
     public void run() {
         // The logic of task/job that is going to be executed.  
         // Here we are going to print the following string value  
-        System.out.format("in Sight This is being printed every 1 sec. %d%n ", counter);
+        System.out.println("--> THREAD 1 Timer 1 in Sight This is being printed every 1 sec.  "+ counter);
         counter = counter + 1;
     }
 
@@ -38,7 +37,7 @@ public class Sight extends TimerTask {
     public void takePics(long numberOfImages, int delayInterval) {
         numberofimages = numberOfImages;
         picdelay = delayInterval;
-
+        System.out.println("--> THREAD 1 TAKING PICTURE");
         robot1.analysis.analyse sightAnalyser = new robot1.analysis.analyse();
 
         try {

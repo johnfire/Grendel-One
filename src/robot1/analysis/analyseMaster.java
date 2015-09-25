@@ -24,6 +24,7 @@ public class analyseMaster implements Runnable  {
  */
     
     public void addJob(){
+        System.out.println("--> THREAD 3 add job to be analysed ");
         
     }
     
