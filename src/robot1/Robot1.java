@@ -56,6 +56,8 @@ public class Robot1 {
                 
                 mysenses.test();
                 myMovements.testpi();
+                myMasterAnalyser.waitForWork();
+                
                 //use sight
                 //use hearing
                 //on interrupt do something
@@ -103,9 +105,7 @@ public class Robot1 {
 
                     }         
                 } 
-            }
-            //mysenses.main(args);
-            //myMovements.testpi();  
+            }  
         } catch (Exception e) {
             // Handle error
             System.out.println( "Exception of some kind: " + e );

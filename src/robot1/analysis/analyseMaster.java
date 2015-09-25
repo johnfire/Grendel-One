@@ -26,4 +26,8 @@ public class analyseMaster implements Runnable  {
     public void addJob(){
         
     }
+    
+    public void waitForWork(){
+        System.out.println("--> THREAD 3 The analyser is waiting for work");
+    }
 }

@@ -28,12 +28,8 @@ public class senses extends TimerTask implements Runnable {
     public void run() {  
         // The logic of task/job that is going to be executed.
         // Here we are going to print the following string value  
-        System.out.format("in senses This is being printed every 3/4 sec. %d%n ", counter1);  
+        System.out.format("--> THREAD 1 in senses This is being printed every 3/4 sec. %d%n ", counter1);  
         counter1 = counter1 + 1;
-        //this.test();
-        //for(int i=1; i<1000000; i++){
-        //      counter2++;
-        //
     }  
     
 /**

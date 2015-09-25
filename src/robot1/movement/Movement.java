@@ -47,7 +47,7 @@ public class Movement implements Runnable {
       while(true){
           try {
               this.setupServos();
-              System.out.println("--> i have just initialized the servos");
+              System.out.println("--> THREAD 2 i have just initialized the servos");
               this.testpi();
           } catch (InterruptedException ex) {
               Logger.getLogger(Movement.class.getName()).log(Level.INFO, null, ex);
@@ -119,32 +119,33 @@ public class Movement implements Runnable {
     
     public void testpi() throws InterruptedException{
        
-        System.out.println("<--Pi4J--> GPIO Control Example ... started.");
+        System.out.println("--> THREAD 2 entering loop");
+        System.out.println("<--Pi4J--> THREAD 2 GPIO Control Example ... started.");
         
         // set shutdown state for this pin
         pin.setShutdownOptions(true, PinState.LOW);
         
-        System.out.println("--> GPIO state should be: ON");
+        System.out.println("--> THREAD 2 GPIO state should be: ON");
         Thread.sleep(333);
         
         // turn off gpio pin #01
         pin.low();
-        System.out.println("--> GPIO state should be: OFF");
+        System.out.println("--> THREAD 2 GPIO state should be: OFF");
         Thread.sleep(333);
         
         // toggle the current state of gpio pin #01 (should turn on)
         pin.toggle();
-        System.out.println("--> GPIO state should be: ON");
+        System.out.println("--> THREAD 2 GPIO state should be: ON");
 
         //timer.wait(5000);
         Thread.sleep(333);
         // toggle the current state of gpio pin #01  (should turn off)
         pin.toggle();
-        System.out.println("--> GPIO state should be: OFF");
+        System.out.println("--> THREAD 2 GPIO state should be: OFF");
 
         //timer.wait(5000);
         Thread.sleep(333);
-        System.out.println("--> leaving movement operation");
+        System.out.println("--> THREAD 2 leaving movement operation");
         // turn on gpio pin #01 for 1 second and then off
         //Future<?> pulse = pin.pulse(1000, true); // set second argument to 'true' use a blocking call
         
