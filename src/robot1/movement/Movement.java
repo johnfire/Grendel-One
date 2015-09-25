@@ -30,6 +30,12 @@ public class Movement implements Runnable {
     
     int servos = 2;
     servoController[] servo = new servoController[servos];
+    // create gpio controller
+    final GpioController gpio = GpioFactory.getInstance();
+    // provision gpio pin #01 as an output pin and turn on
+    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "MyLED", PinState.HIGH);
+
+        
     
    
 /**
@@ -38,7 +44,15 @@ public class Movement implements Runnable {
     
     @Override
     public void run(){
-        
+      while(true){
+          try {
+              this.setupServos();
+              System.out.println("--> i have just initialized the servos");
+              this.testpi();
+          } catch (InterruptedException ex) {
+              Logger.getLogger(Movement.class.getName()).log(Level.INFO, null, ex);
+          }
+      }
     }
     
     public boolean setupServos(){
@@ -92,62 +106,51 @@ public class Movement implements Runnable {
     public void moveWheels(boolean direction, int speed, int distance) {
             
     }
+    
+    public void initialisepi() {
+        
+
+        
+    }
 
 /**
  *runs the warning light and test the connection
  */
-    public void testpi(){
-
-        Timer timer = new Timer();
-        //try {
+    
+    public void testpi() throws InterruptedException{
+       
         System.out.println("<--Pi4J--> GPIO Control Example ... started.");
-
-        // create gpio controller
-        final GpioController gpio = GpioFactory.getInstance();
-
-        // provision gpio pin #01 as an output pin and turn on
-        final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "MyLED", PinState.HIGH);
-
+        
         // set shutdown state for this pin
         pin.setShutdownOptions(true, PinState.LOW);
+        
+        System.out.println("--> GPIO state should be: ON");
+        Thread.sleep(333);
+        
+        // turn off gpio pin #01
+        pin.low();
+        System.out.println("--> GPIO state should be: OFF");
+        Thread.sleep(333);
+        
+        // toggle the current state of gpio pin #01 (should turn on)
+        pin.toggle();
+        System.out.println("--> GPIO state should be: ON");
 
-        while (true){
-            System.out.println("--> GPIO state should be: ON");
+        //timer.wait(5000);
+        Thread.sleep(333);
+        // toggle the current state of gpio pin #01  (should turn off)
+        pin.toggle();
+        System.out.println("--> GPIO state should be: OFF");
 
-            try {
-                Thread.sleep(333);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Movement.class.getName()).log(Level.INFO, null, ex);
-            }
-
-            // turn off gpio pin #01
-            pin.low();
-            System.out.println("--> GPIO state should be: OFF");
-
-            try {
-                //timer.wait(5000);
-                Thread.sleep(333);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Movement.class.getName()).log(Level.INFO, null, ex);
-            }
-            // toggle the current state of gpio pin #01 (should turn on)
-            pin.toggle();
-            System.out.println("--> GPIO state should be: ON");
-
-            //timer.wait(5000);
-            //Thread.sleep(333);
-            // toggle the current state of gpio pin #01  (should turn off)
-            //pin.toggle();
-            //System.out.println("--> GPIO state should be: OFF");
-
-            //timer.wait(5000);
-            //Thread.sleep(333);
-            // turn on gpio pin #01 for 1 second and then off
-            //Future<?> pulse = pin.pulse(1000, true); // set second argument to 'true' use a blocking call
-        }
+        //timer.wait(5000);
+        Thread.sleep(333);
+        System.out.println("--> leaving movement operation");
+        // turn on gpio pin #01 for 1 second and then off
+        //Future<?> pulse = pin.pulse(1000, true); // set second argument to 'true' use a blocking call
+        
         // stop all GPIO activity/threads by shutting down the GPIO controller
         // (this method will forcefully shutdown all GPIO monitoring threads and scheduled tasks)
-        // gpio.shutdown();        
+        gpio.shutdown();        
     }     
 }
      

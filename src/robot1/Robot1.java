@@ -11,9 +11,9 @@ package robot1;
  * @author christopher-rehm
  */
         
-import robot1.senses.CameraTest;
+import robot1.sensesstuff.CameraTest;
 import robot1.movement.Movement;
-import robot1.senses.senses;
+import robot1.sensesstuff.senses;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
 
@@ -53,7 +53,9 @@ public class Robot1 {
             T4.start();
 
             while(true){
-
+                
+                mysenses.test();
+                myMovements.testpi();
                 //use sight
                 //use hearing
                 //on interrupt do something

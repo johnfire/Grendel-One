@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package robot1.senses;
+package robot1.sensesstuff;
 
-import robot1.senses.RaspiStill;
+import robot1.sensesstuff.RaspiStill;
 
 /**
  *

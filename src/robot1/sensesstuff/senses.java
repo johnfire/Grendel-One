@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package robot1.senses;
+package robot1.sensesstuff;
 
 /**
  *
@@ -30,9 +30,10 @@ public class senses extends TimerTask implements Runnable {
         // Here we are going to print the following string value  
         System.out.format("in senses This is being printed every 3/4 sec. %d%n ", counter1);  
         counter1 = counter1 + 1;
-        for(int i=1; i<1000000; i++){
-              counter2++;
-        }
+        //this.test();
+        //for(int i=1; i<1000000; i++){
+        //      counter2++;
+        //
     }  
     
 /**

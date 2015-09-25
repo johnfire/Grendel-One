@@ -12,5 +12,15 @@ package robot1;
  */
 
 public class Logger {
+    String logFileName ="";
+    
+            
+    
+    // open file
+    
+    //write all messages to file
+    
+    // lose on exit
+    
     
 }
