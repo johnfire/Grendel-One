@@ -14,6 +14,7 @@ package robot1;
 import robot1.sensesstuff.CameraTest;
 import robot1.movement.Movement;
 import robot1.sensesstuff.senses;
+import robot1.analysis.analyseMaster;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
 
@@ -25,7 +26,9 @@ public class Robot1 {
     private static boolean talktalk    = false;
     private static boolean saveit      = false;
     private static boolean action      = false;
-    private static long thetime;
+    //private static long thetime         = 0;
+    //Robot1 myrobot       = new Robot1();
+    
 
     /**
      * this is the main method of Robot1, that basically puts the whole
@@ -33,14 +36,17 @@ public class Robot1 {
      * @param args the command line arguments
      */
     
+    
     public static void main(String[] args) {
         // TODO code application logic here    
         try {
+            
             senses mysenses      = new senses();
             Movement myMovements = new Movement();
-            robot1.analysis.analyseMaster myMasterAnalyser = new robot1.analysis.analyseMaster();
+            analyseMaster myMasterAnalyser = new analyseMaster();
             Speech mySpeech      = new Speech();
             CameraTest myeye     = new CameraTest();
+            int counter = 0;
 
             Thread T1 = new Thread (mysenses);
             Thread T2 = new Thread (myMovements);
@@ -54,11 +60,13 @@ public class Robot1 {
             T4.start();
 
             while(true){
-                System.out.println("!!> Sys Time "+ System.currentTimeMillis());
-                System.out.println("--> THREAD 0 starting do loop of main brain ");
-                mysenses.test();
-                myMovements.testpi();
-                myMasterAnalyser.waitForWork();
+                counter++;
+                if (counter%100 ==counter/100){
+                     System.out.println("!!> Sys Time "+ System.currentTimeMillis());
+                     System.out.println("--> THREAD 0 starting do loop of main brain ");
+                }
+                
+                
                 
                 //use sight
                 //use hearing
@@ -123,87 +131,87 @@ public class Robot1 {
     } 
     
     
-    public void setnewSight(){
-        System.out.println("--> THREAD 0 ");
+    static void setnewSight(){
+        System.out.println("--> THREAD 0 setting new sighting" + System.currentTimeMillis());
         newSight = true;
         //long thetime;
-        Robot1.thetime = System.currentTimeMillis();
+        //Robot1.thetime = System.currentTimeMillis();
             
     }
     
-    public void setnewHear(){
+    public static void setnewHear(){
         System.out.println("--> THREAD 0 ");
         newHear =true;
         
     }
     
-    public void setnewInternet(){
+    public static void setnewInternet(){
         System.out.println("--> THREAD 0 ");
         newInternet = true;
         
     }
     
-    public void setnewAnalysis(){
+    public static void setnewAnalysis(){
         System.out.println("--> THREAD 0 ");
         newAnalysis = true;
         
     }
     
-    public void settalktalk(){
+    public static void settalktalk(){
         System.out.println("--> THREAD 0 ");
         talktalk = true;
         
     }
     
-    public void setSaveIt(){
+    public static void setSaveIt(){
         System.out.println("--> THREAD 0 ");
         saveit = true;
         
     }
     
-    public void setaction(){
+    public static void setaction(){
         System.out.println("--> THREAD 0 ");
         action = true;
         
     }
     
-    public void clearnewSight(){
+    public static void clearnewSight(){
         System.out.println("--> THREAD 0 ");
         newSight = false;
         
     }
     
-    public void clearnewHear(){
+    public static void clearnewHear(){
         System.out.println("--> THREAD 0 ");
         newHear =false;
         
     }
     
-    public void clearnewInternet(){
+    public static void clearnewInternet(){
         System.out.println("--> THREAD 0 ");
         newInternet = false;
         
     }
     
-    public void clearnewAnalysis(){
+    public static void clearnewAnalysis(){
         System.out.println("--> THREAD 0 ");
         newAnalysis = false;
         
     }
     
-    public void cleartalktalk(){
+    public static void cleartalktalk(){
         System.out.println("--> THREAD 0 ");
         talktalk = false;
         
     }
     
-    public void clearSaveIt(){
+    public static void clearSaveIt(){
         System.out.println("--> THREAD 0 ");
         saveit = false;
         
     }
     
-    public void clearaction(){
+    public static void clearaction(){
         System.out.println("--> THREAD 0 ");
         action = false;
         

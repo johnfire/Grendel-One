@@ -15,15 +15,13 @@ import robot1.sensesstuff.RaspiStill;
 
 public class CameraTest {
     // Define the number of photos to take.
-    private static final long _numberOfImages = 5;
+    //private static final long _numberOfImages = 5;
     // Define the interval between photos.
-    private static final int _delayInterval = 5000;
+    //private static final int _delayInterval = 5000;
 
-    public static void main(String[] args){
-      
-  }
+ 
   
-    public static void takePic (){
+    public static void takePic (long  _numberOfImages, int _delayInterval){
         try{
             // Create a new RaspiStill object.
             RaspiStill camera = new RaspiStill();

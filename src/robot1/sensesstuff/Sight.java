@@ -13,6 +13,7 @@ package robot1.sensesstuff;
  */
 
 import java.util.TimerTask;
+//import robot1.Robot1;
 
 public class Sight extends TimerTask {
 
@@ -26,6 +27,10 @@ public class Sight extends TimerTask {
         // Here we are going to print the following string value  
         System.out.println("--> THREAD 1 Timer 1 in Sight This is being printed every 1 sec.  "+ counter);
         counter = counter + 1;
+        this.takePics(3, 10);
+        //Robot1.setnewSight();
+       
+        
     }
 
     /**
@@ -37,7 +42,7 @@ public class Sight extends TimerTask {
     public void takePics(long numberOfImages, int delayInterval) {
         numberofimages = numberOfImages;
         picdelay = delayInterval;
-        System.out.println("--> THREAD 1 TAKING PICTURE");
+        
         robot1.analysis.analyse sightAnalyser = new robot1.analysis.analyse();
 
         try {
@@ -48,6 +53,7 @@ public class Sight extends TimerTask {
                 // Capture the image.
                 camera.TakePicture(System.currentTimeMillis() + ".jpg", 800, 600);
                 // Pause after each photo.
+                System.out.println("--> THREAD 1 TAKING PICTURE");
                 sightAnalyser.findMovement();
                 Thread.sleep(picdelay);
             }

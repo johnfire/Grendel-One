@@ -15,7 +15,13 @@ public class analyseMaster implements Runnable  {
     @Override
     public void run(){
         while(true){
-            
+            try{
+                this.waitForWork();
+                Thread.sleep(1000);
+            }catch(Exception e){
+                System.out.println("Thread 3 analyser caught time out ");  
+      
+            }
         }   
     } 
     
@@ -27,6 +33,7 @@ public class analyseMaster implements Runnable  {
         System.out.println("--> THREAD 3 add job to be analysed ");
         
     }
+    
     
     public void waitForWork(){
         System.out.println("--> THREAD 3 The analyser is waiting for work");

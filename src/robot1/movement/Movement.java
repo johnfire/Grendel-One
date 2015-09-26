@@ -16,7 +16,6 @@ import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
-import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,10 +32,7 @@ public class Movement implements Runnable {
     // create gpio controller
     final GpioController gpio = GpioFactory.getInstance();
     // provision gpio pin #01 as an output pin and turn on
-    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "MyLED", PinState.HIGH);
-
-        
-    
+    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "MyLED", PinState.HIGH);  
    
 /**
  * 
@@ -44,14 +40,14 @@ public class Movement implements Runnable {
     
     @Override
     public void run(){
-      while(true){
-          try {
-              this.setupServos();
-              System.out.println("--> THREAD 2 i have just initialized the servos");
-              this.testpi();
-          } catch (InterruptedException ex) {
-              Logger.getLogger(Movement.class.getName()).log(Level.INFO, null, ex);
-          }
+        this.setupServos();
+        System.out.println("--> THREAD 2 i have just initialized the servos");
+        while(true){
+            try {
+                this.testpi();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Movement.class.getName()).log(Level.INFO, null, ex);
+            }
       }
     }
     

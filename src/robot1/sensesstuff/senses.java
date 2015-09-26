@@ -18,18 +18,40 @@ import java.util.TimerTask;
 public class senses extends TimerTask implements Runnable {
     
     private int counter1 = 0;
-    private int counter2 = 0;
+    private Sight mySight =new Sight();
     
-    private boolean sightOn = false;
-    private boolean hearingOn = false;
-    private boolean internetOn = false;
+    // Create an instance of our task/job for execution  
+        
+    Sight taskSight = new Sight();
+    Hearing taskHearing = new Hearing();
+    
+    private boolean sightOn         = false;
+    private boolean hearingOn       = false;
+    private boolean internetOn      = false;
+    private boolean sendMessageT    = false;
+    private boolean receiveMessageT = false;
     
     @Override  
     public void run() {  
         // The logic of task/job that is going to be executed.
         // Here we are going to print the following string value  
-        System.out.println("--> THREAD 1 in senses This is being printed every 3/4 sec.  "+ counter1);  
-        counter1 = counter1 + 1;
+        
+        System.out.println("--> THREAD 1 starting test of senses function");
+        
+        // We use a class java.util.Timer to   
+        // schedule our task/job for execution  
+        Timer timer2 = new Timer();
+        Timer timer3 = new Timer();
+        // Let's schedule our task/job to be executed every 1 second  
+        timer2.scheduleAtFixedRate(taskSight, 0, 1000);  
+        timer3.scheduleAtFixedRate(taskHearing, 0, 500);
+       
+        // First parameter: task - the job logic we   
+        // created in run() method above.  
+        // Second parameter: 0 - means that the task is   
+        // executed in 0 millisecond after the program runs.  
+        // Third parameter: 1000 - means that the task is   
+        // repeated every 1000 milliseconds         
     }  
     
 /**
@@ -39,6 +61,8 @@ public class senses extends TimerTask implements Runnable {
 
     public synchronized void runSight(){
         System.out.println("--> THREAD 1 run sight object and make pictures");
+        sightOn = true;
+        mySight.takePics(100, 1000);
         
        
     }  
@@ -49,7 +73,8 @@ public class senses extends TimerTask implements Runnable {
        
     public void stopSight(){
         System.out.println("--> THREAD 1 stop sight object no pictures");
-        
+        mySight.takePics(0, 0);
+        sightOn = false;
     }
     
 /**
@@ -60,7 +85,7 @@ public class senses extends TimerTask implements Runnable {
 
     public synchronized void runHearing(){
         System.out.println("--> THREAD 1  run hearing look for sound events");
-        
+        hearingOn = true;
        
     } 
     
@@ -70,6 +95,8 @@ public class senses extends TimerTask implements Runnable {
        
     public void stopHearing(){
         System.out.println("--> THREAD 1 stop hearing");
+        hearingOn = false;
+        
     }
     
 /**
@@ -79,6 +106,7 @@ public class senses extends TimerTask implements Runnable {
     
     public synchronized void runInternet(){
         System.out.println("--> THREAD 1 run internet search ");
+        internetOn = true;
        
     } 
     
@@ -89,15 +117,8 @@ public class senses extends TimerTask implements Runnable {
     public void stopInternet(){
         System.out.println("--> THREAD 1 stop internet search");
         
+        internetOn = false;
         
-    }
-    
-/**
- *simply our main function. does nothing at this time. 22-9-2015
- * 
- */   
-    
-    public static void main(String[] args) { 
         
     }
     
@@ -105,20 +126,30 @@ public class senses extends TimerTask implements Runnable {
  *
  * send a notice to brain that we have new info
  */    
+    public void setHaveMessageT (){
+        sendMessageT = true;
+    }
+    
     
     public void sendBrainMessage(){
         System.out.println("--> THREAD 1 send the brain function a message");
-        
+       
+        sendMessageT =false;
     }
     
 /**
  *
  * get notice from brain and follow instruxtions
  */    
+    public void setReceiveMessageT() {
+        receiveMessageT = true;
+    }
+    
     
     public synchronized  void recieveBrainMessage(){
         System.out.println("--> THREAD 1 receive message from main brain");
         
+        receiveMessageT = false;
     }
     
 /**
@@ -143,6 +174,13 @@ public class senses extends TimerTask implements Runnable {
         timer1.scheduleAtFixedRate(taskSenses,0, 750);
         timer2.scheduleAtFixedRate(taskSight, 0, 1000);  
         timer3.scheduleAtFixedRate(taskHearing, 0, 500);
+        while(true){
+            //scan fo events
+            if (mySight.getnumberofremainingpics()== 0){
+                mySight.takePics(20, 2000);    
+            }
+            
+        }
         // First parameter: task - the job logic we   
         // created in run() method above.  
         // Second parameter: 0 - means that the task is   
